@@ -1,0 +1,40 @@
+html {
+    font-size: 16px;
+}
+
+p {
+    text-indent: 30px;
+}
+
+body {
+    background-color: beige;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+blockquote {
+    text-align: right;
+}
+.parent {
+    background-color: red;
+}
+
+.child {
+    background-color: blue;
+}
+
+.parent,
+.child {
+    width: 50%;
+}
+.block-model {
+    box-sizing: content-box;
+    display: inline-block;
+    width: 400px;
+    height: 100px;
+    margin: 20px;
+    padding: 20px;
+    border: 6px solid #666;
+    background-color: #f1f1f1;
+}
