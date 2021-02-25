@@ -38,3 +38,10 @@ blockquote {
     border: 6px solid #666;
     background-color: #f1f1f1;
 }
+ul {
+    margin-left: 30px;
+    
+}
+ul :not(:last-child){
+    margin-bottom: 100px;
+}
