@@ -1,99 +1,3 @@
-.main-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #222020;
-}
-
-.skillbox-link {
-  display: inline-block;
-  color: white;
-  font-family: 'Graphik LCG', sans-serif;
-  margin-bottom: 30px;
-}
-
-.download-link {
-  padding: 20px;
-  display: inline-block;
-  color: white;
-  border-style: solid;
-  background-color: #2f1ce4;
-  border-width: 3px;
-  border-color: #2f1ce4;
-}
-
-.moreinfo-link {
-  padding: 20px;
-  display: inline-block;
-  color: white;
-  border-style: solid;
-  background-color: transparent;
-  border-width: 3px;
-  border-color: white;
-}
-
-.container {
-  width: 1170px;
-  margin: 0 auto;
-  padding-top: 30px; 
-  padding-bottom: 30px;
-}
-
-.back-link {
-  padding-left: 30px;
-  background-image: url(../img/return.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.main-title {
-  margin-top: 100px;
-  padding-left: 100px;
-  font-size: 48px;
-  color: #222020;
-}
-
-.basic-title {
-  padding-left: 180px;
-  font-size: 36px;
-  color: #2f1ce4;
-  margin-top: 100px;
-  margin-bottom: 25px;
-}
-
-.list {
-  padding-left: 200px;
-  font-size: 18px;
-}
-
-.paragraph {
-  padding-left: 180px;
-  margin-bottom: 20px;
-}
-
-.picture {
-  padding-left: 200px;
-  text-align: center;
-  display: inline-block;
-  margin: 50px 0 50px 0;
-}
-
-.table {
-  margin-top: 100px;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-.table th, td {
-  margin-top: 100px;
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 5px;
-}
-
-
 @font-face {
   font-family: 'Graphik LCG';
   src: url('../fonts/GraphikLCG-Medium.woff2') format('woff2'),
@@ -142,4 +46,103 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222020;
+}
+
+.skillbox-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-family: 'Graphik LCG', sans-serif;
+  color: white;
+}
+
+.download-link {
+  padding: 20px;
+  display: inline-block;
+  color: white;
+  border-style: solid;
+  background-color: #2f1ce4;
+  border-width: 3px;
+  border-color: #2f1ce4;
+}
+
+.moreinfo-link {
+  padding: 20px;
+  display: inline-block;
+  color: white;
+  border-style: solid;
+  background-color: transparent;
+  border-width: 3px;
+  border-color: white;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  padding-top: 30px; 
+  padding-bottom: 30px;
+}
+
+.back-link {
+  padding-left: 30px;
+  background-image: url(../img/return.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main-title {
+  margin-top: 100px;
+  padding-left: 100px;
+  font-size: 48px;
+  color: #222020;
+}
+
+.basic-title {
+  margin-top: 100px;
+  margin-bottom: 25px;
+  padding-left: 180px;
+  font-size: 36px;
+  color: #2f1ce4;
+}
+
+.list {
+  padding-left: 200px;
+  font-size: 18px;
+}
+
+.paragraph {
+  padding-left: 180px;
+  margin-bottom: 20px;
+}
+
+.picture {
+  margin: 50px 0 50px 0;
+  padding-left: 200px;
+  text-align: center;
+  display: inline-block;
+}
+
+.table {
+  margin-top: 100px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.table th, td {
+  margin-top: 100px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.table tr:last-child {
+  text-align: center;
 }
