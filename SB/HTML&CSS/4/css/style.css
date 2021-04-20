@@ -58,7 +58,7 @@ a {
 }
 
 .main-content2 {
-  padding-left: 449px;
+  padding-left: 448px;
   padding-right: 455px;
 }
 
@@ -155,7 +155,7 @@ a {
 }
 
 .list2 {
-  /* padding-left: 200px; */
+  padding: 0px;
   margin-top: 78px;
   font-size: 0px;
 }
@@ -164,11 +164,16 @@ a {
   display: inline-block;
   width: 481px;
   min-height: 506px;
-  border: 1px solid #000;
-  margin-right: 59px;
+  /* border: 1px solid #000; */
+  margin-right: 0px;
   margin-bottom: 59px;
   vertical-align: middle;
   position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.right {
+  margin-left: 59px;
 }
 
 .paragraph {
@@ -198,6 +203,55 @@ a {
 
 .table tr:last-child {
   text-align: center;
+}
+
+.card {
+  width: 481px;
+  height: 181px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-img1 {
+  background-image: url(../img/1.jpeg);
+}
+
+.card-img2 {
+  background-image: url(../img/2.jpeg);
+}
+
+.card-img3 {
+  background-image: url(../img/3.jpeg);
+}
+
+.card-img4 {
+  background-image: url(../img/4.jpeg);
+}
+
+.card-title {
+  margin: 0px;
+  padding-top: 29px;
+  padding-bottom: 29px;
+  padding-left: 53px;
+  background-color: white;
+  font-size: 36px;
+  color: #2F1CE4;
+}
+.card-paragraph {
+  margin: 0px;
+  padding-bottom: 21px;
+  padding-left: 53px;
+  background-color: white;
+  font-size: 16px;
+  color: #222020;
+}
+
+.number {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 48px;
+  color: #EAEAEA;
 }
 
 .btn-center {
