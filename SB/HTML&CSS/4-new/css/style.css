@@ -18,7 +18,7 @@ img {
 }
 
 body {
-	font-family: 'font', sans-serif;
+	font-family: Arial, Verdana, sans-serif;
 }
 
 .main-content {
@@ -34,12 +34,14 @@ body {
 .logo {
     display: block;
     margin-bottom: 50px;
+
 }
 
 .links {
     display: inline-block;
     margin-bottom: 50px;
-    
+
+
 }
 
 .links a {
@@ -48,6 +50,9 @@ body {
     padding-bottom: 24px;
     padding-right: 49px;
     padding-left: 49px;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: #3f2aff;
 }
 
 .links a:not(:last-child) {
