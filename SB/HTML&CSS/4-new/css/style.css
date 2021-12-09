@@ -8,7 +8,12 @@ html {
 	box-sizing: inherit;
 }
 
-.article_links {
+.ul {
+  margin: 0;
+  padding: 0;
+}
+
+.article-link {
 	border-bottom: 1px solid #3f2aff;
 	text-decoration: none;
   font-size: 20px;
@@ -43,12 +48,12 @@ body {
   display: block;
 }
 
-.links {
+.links-block {
   margin-bottom: 50px;
   display: inline-block;
 }
 
-.links a {
+.link {
   padding-top: 24px;
   padding-bottom: 24px;
   padding-right: 49px;
@@ -61,11 +66,11 @@ body {
   background-color: #3f2aff;
 }
 
-.links a:not(:last-child) {
+.link:not(:last-child) {
   margin-right: 25px;
 }
 
-.download_link {
+.download-link {
   padding-left: 1.5em;
   font-weight: 700;
   font-size: 18px;
@@ -74,21 +79,13 @@ body {
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 1.2em;
+  text-decoration: none;
 }
 
 .container {
   margin: 0 auto;
   padding: 80px 0;
   width: 1170px;
-}
-
-.container h1 {
-  margin-bottom: 40px;
-}
-
-.container p {
-  margin: 0;
-  margin-bottom: 40px;
 }
 
 .grey-block {
@@ -100,11 +97,11 @@ body {
   background-repeat: no-repeat;
 }
 
-.with_image_1 {
+.grey-block-img1 {
   background-image: url('../img/decorate-1.png');
 }
 
-.with_image_2 {
+.grey-block-img2 {
   background-image: url('../img/decorate-2.png');
 }
 
@@ -112,20 +109,15 @@ body {
     margin-bottom: 40px;
 }
 
-.grey-block p {
-  margin-bottom: 10px;
-  width: 692px;
-}
-
-.grey-block li {
+.li {
   margin-left: 15px;
 }
 
-.grey-block li:not(:last-child) {
+.li:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.heading_2 {
+.heading-2 {
   margin: 0;
   margin-bottom: 10px;
   font-size: 40px;
@@ -150,7 +142,7 @@ body {
   border-top: 0;
 }
 
-.heading_3 {
+.heading-3 {
   margin: 0;
   margin-bottom: 10px;
   font-weight: 400;
@@ -159,7 +151,9 @@ body {
   color: #333;
 }
 
-.main_title {
+.main-title {
+  margin: 0;
+  margin-bottom: 40px;
   font-weight: 400;
   font-size: 60px;
   line-height: 60px;
@@ -167,6 +161,8 @@ body {
 }
 
 .paragraph {
+  margin: 0;
+  margin-bottom: 40px;
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
@@ -174,7 +170,12 @@ body {
   width: 872px;
 }
 
-.paragraph_highlited {
+.grey-block-p {
+  margin-bottom: 10px;
+  width: 692px;
+}
+
+.paragraph-highlited {
   padding: 50px 95px;
   border-radius: 20px;
   width: 100%;
