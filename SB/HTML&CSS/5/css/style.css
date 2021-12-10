@@ -238,7 +238,7 @@ body {
   margin-bottom: 25px;
   vertical-align: middle;
   position: relative;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 40px rgba(0,0,0,0.1);
 }
 
 .right {
@@ -272,6 +272,7 @@ body {
 .card-title {
   margin: 0;
   margin-top: 25px;
+  margin-bottom: 2px;
   margin-left: 25px;
   font-weight: 700;
   font-style: normal;
@@ -288,6 +289,10 @@ body {
   font-size: 20px;
   line-height: 33px;
   color: #333333;
+}
+
+.card-p:first-child {
+  margin-top: 2px;
 }
 
 .number {
@@ -309,8 +314,11 @@ body {
 .btn {
   width: 274px;
   height: 70px;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 700;
+  font-style: normal;
   background-color: white;
   color: #3F2AFF;
   border: 2px solid #3F2AFF;
-  font-size: 18px;
 }
