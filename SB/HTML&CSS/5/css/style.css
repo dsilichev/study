@@ -194,12 +194,13 @@ body {
 }
 
 .logo-img {
+  display: block;
   width: 137px;
   margin-bottom: 25px;
 }
 
 .back-link {
-  display: block;
+  display: inline-block;
   margin-bottom: 25px;
   padding-left: 52px;
   font-weight: 400;
@@ -215,7 +216,9 @@ body {
 }
 
 .h1-modules {
+  display: block;
   margin: 0;
+  margin-bottom: 50px;
   font-weight: 700;
   font-style: normal;
   font-size: 60px;
@@ -226,7 +229,7 @@ body {
 .ul-modules {
   display: inline-block;
   margin: 0;
-  margin-top: 50px;
+  margin-bottom: 25px;
   padding: 0;
   font-size: 0;
 }
@@ -239,18 +242,13 @@ body {
   vertical-align: middle;
   position: relative;
   box-shadow: 0 0 40px rgba(0,0,0,0.1);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .right {
   margin-left: 25px;
-}
-
-.card {
-  width: 572px;
-  height: 180px;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .img1 {
@@ -271,7 +269,7 @@ body {
 
 .card-title {
   margin: 0;
-  margin-top: 25px;
+  margin-top: 205px;
   margin-bottom: 2px;
   margin-left: 25px;
   font-weight: 700;
@@ -281,8 +279,18 @@ body {
   color: #3F2AFF;
 }
 
-.card-p {
+.ul-card {
   margin: 0;
+  padding: 0;
+}
+
+.li-card::marker {
+  font-size: 0;
+}
+
+.li-card {
+  margin: 0;
+  padding: 0;
   margin-left: 25px;
   font-weight: 400;
   font-style: normal;
@@ -291,7 +299,7 @@ body {
   color: #333333;
 }
 
-.card-p:first-child {
+.li-card:first-child {
   margin-top: 2px;
 }
 
@@ -307,13 +315,11 @@ body {
 }
 
 .btn-container {
-  margin-top: 25px;
   text-align: center;
 }
 
 .btn {
-  width: 274px;
-  height: 70px;
+  padding: 24px 75px;
   font-size: 18px;
   line-height: 21px;
   font-weight: 700;
