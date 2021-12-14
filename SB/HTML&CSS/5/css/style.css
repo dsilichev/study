@@ -215,7 +215,7 @@ body {
   text-decoration: none;
 }
 
-.h1-modules {
+.title-modules {
   display: block;
   margin: 0;
   margin-bottom: 50px;
@@ -226,7 +226,7 @@ body {
   color: #3F2AFF;
 }
 
-.ul-modules {
+.list-modules {
   display: inline-block;
   margin: 0;
   margin-bottom: 25px;
@@ -234,11 +234,13 @@ body {
   font-size: 0;
 }
 
-.li-modules {
+.list-item-modules {
   display: inline-block;
   width: 572px;
   min-height: 505px;
   margin-bottom: 25px;
+  padding-top: 205px;
+  padding-left: 25px;
   vertical-align: middle;
   position: relative;
   box-shadow: 0 0 40px rgba(0,0,0,0.1);
@@ -269,9 +271,7 @@ body {
 
 .card-title {
   margin: 0;
-  margin-top: 205px;
   margin-bottom: 2px;
-  margin-left: 25px;
   font-weight: 700;
   font-style: normal;
   font-size: 40px;
@@ -279,19 +279,18 @@ body {
   color: #3F2AFF;
 }
 
-.ul-card {
+.list-card {
   margin: 0;
   padding: 0;
 }
 
-.li-card::marker {
+.list-item-card::marker {
   font-size: 0;
 }
 
-.li-card {
+.list-item-card {
   margin: 0;
   padding: 0;
-  margin-left: 25px;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -299,7 +298,7 @@ body {
   color: #333333;
 }
 
-.li-card:first-child {
+.list-item-card:first-child {
   margin-top: 2px;
 }
 
