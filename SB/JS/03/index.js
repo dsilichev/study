@@ -10,23 +10,10 @@ else {
 
 // Задание 2
 let fname = 'NaMe';
-let sname = 'SuRNamE';
+let sname = 'Surname';
 
-function toUpper(str) {
-  let ustr = '';
-  for (i in str){
-    if (i == 0){
-      ustr += str[i].toUpperCase();
-    }
-    else{
-      ustr += str[i].toLowerCase();
-    }
-  }
-  console.log(ustr);
-}
-
-let ufname = toUpper(fname);
-let usname = toUpper(sname);
+let ufname = format(fname);
+let usname = format(sname);
 
 if (fname === ufname){
   console.log('Имя осталось без изменений');
@@ -36,8 +23,15 @@ else{
 }
 
 if (sname === usname){
-  console.log('Фамилия осталось без изменений');
+  console.log('Фамилия осталась без изменений');
 }
 else{
   console.log('Фамилия была преобразована');
+}
+
+function format(str){
+  let ustr;
+  ustr = str.substr(0, 1).toUpperCase() + str.substr(1).toLowerCase();
+  console.log(ustr);
+  return ustr;
 }
