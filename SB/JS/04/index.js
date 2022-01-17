@@ -1,29 +1,37 @@
 // Задание 1
 let count = 70;
-let arr = [];
+let array = [];
 let n = 100;
 let m = -5;
+let min = Math.min(n, m);
+let max = Math.max(n, m);
 
 for (i = 0; i < count; ++i) {
-  let min = Math.min(n, m);
-  let max = Math.max(n, m);
-  arr.push(Math.floor(Math.random() * (max - min) + min));
+  array.push(Math.floor(Math.random() * (max - min) + min));
 }
-console.log(arr);
+console.log(array);
+
+array = [];
+i = 0;
+while (i < count) {
+  array.push(Math.floor(Math.random() * (max - min) + min));
+  ++i;
+}
+console.log(array);
 
 // Задание 2
-let str = 'Привет, мир!'
-let rstr = '';
+let string = 'Привет, мир!'
+let reverseString = '';
 
-for (i = str.length - 1; i >=0; --i){
-  rstr += str[i];
+for (i = string.length - 1; i >=0; --i){
+  reverseString += string[i];
 }
-console.log(rstr);
+console.log(reverseString);
 
 // Задание 3
 let roadMines = [];
-mineCount = 0;
-position = 0;
+let mineCount = 0;
+let position = 0;
 // Зададим случайный массив из boolean
 for (i = 0; i < 10; ++i){
   roadMines[i] = Boolean(Math.floor(Math.random() * 2));
@@ -46,3 +54,24 @@ for (mine of roadMines){
 }
 
 // Задание 4
+let monthDays = [];
+let weekDays = ['понедельник', 'вторник', 'среда', 'четверг',
+'пятница', 'суббота', 'воскресенье'];
+let weekStartDay = 'понедельник';
+let dayIndex = getStartDayIndex(weekStartDay);
+
+// Заполняем массив дней в месяце
+for (i = 1; i <= 31; ++i){
+  monthDays.push(i);
+}
+
+// Вычисляем индекс стартового дня
+function getStartDayIndex(weekStartDay){
+  return weekDays.indexOf(weekStartDay);
+}
+
+for (monthDay of monthDays){
+  let weekDay = weekDays[dayIndex % 7];
+  console.log(`${monthDay} января, ${weekDay}`);
+  ++dayIndex;
+}
