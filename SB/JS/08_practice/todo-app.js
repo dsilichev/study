@@ -16,6 +16,8 @@
     input.placeholder = 'Введите название нового дела';
     buttonWrapper.classList.add('input-group-append');
     button.classList.add('btn', 'btn-primary');
+    // Атрибут disabled при загрузке страницы
+    button.setAttribute('disabled', 'true');
     button.textContent = 'Добавить дело';
 
     buttonWrapper.append(button);
@@ -73,9 +75,22 @@
     container.append(todoItemForm.form);
     container.append(todoList);
     
+    //событие на input формы
+    todoItemForm.form.addEventListener('input', function() {
+      // Если не пусто, удаляем атрибут disabled, если пусто, возвращаем
+      if (todoItemForm.input.value) {
+        todoItemForm.button.removeAttribute('disabled');
+      }
+      else {
+        todoItemForm.button.setAttribute('disabled', 'true');
+      }
+      
+    })
 
     todoItemForm.form.addEventListener('submit', function(e) {
       e.preventDefault();
+      // возвращаем атрибут disabled кнопке после добавления дела
+      todoItemForm.button.setAttribute('disabled', 'true');
 
       if (!todoItemForm.input.value) {
         return;
