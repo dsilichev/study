@@ -10,8 +10,15 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <script defer src="./todo-app.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      createTodoApp(document.getElementById('todo-app'), 'Дела папы');
+    document.addEventListener('DOMContentLoaded', function () {
+      // Здесь подгрузить сохраненные дела
+      let restoredSession = JSON.parse(localStorage.getItem('session'));
+      if (restoredSession) {
+        createTodoApp(document.getElementById('todo-app'), 'Дела папы', 'dadTodos', restoredSession);
+      }
+      else {
+        createTodoApp(document.getElementById('todo-app'), 'Дела папы', 'dadTodos');
+      }
     });
   </script>
 </head>

@@ -68,15 +68,42 @@
     
   }
 
-  function createTodoApp(container, title = 'Список дел', ...args) {
+  function createTodoApp(container, title = 'Список дел', whosTodo, ...args) {
     let todoAppTitle = createAppTitle(title);
     let todoItemForm = createTodoItemForm();
     let todoList = createTodoList();
+    let session = {
+      myTodos: [],
+      momTodos: [],
+      dadTodos: [],
+    };
+    
 
     container.append(todoAppTitle);
     container.append(todoItemForm.form);
     container.append(todoList);
     
+    // Загрузка сохраненных дел
+    if (args.length !== 0) {
+      console.log(args);
+      session = args[0];
+      for (i = 0; i < args[0][whosTodo].length; i++) {
+        let todoItem = createTodoItem(args[0][whosTodo][i]);
+
+        todoItem.doneButton.addEventListener('click', function () {
+          todoItem.item.classList.toggle('list-group-item-success');
+        });
+        todoItem.deleteButton.addEventListener('click', function () {
+          if (confirm('Вы уверены?')) {
+            todoItem.item.remove();
+          }
+        });
+        todoList.append(todoItem.item);
+      }
+
+    }
+    
+
     //событие на input формы
     todoItemForm.form.addEventListener('input', function() {
       // Если не пусто, удаляем атрибут disabled, если пусто, возвращаем
@@ -86,7 +113,6 @@
       else {
         todoItemForm.button.setAttribute('disabled', 'true');
       }
-      
     })
 
     todoItemForm.form.addEventListener('submit', function(e) {
@@ -98,8 +124,8 @@
         return;
       }
       // Создаем TodoItem
-      let todoItem = createTodoItem({name: todoItemForm.input.value, done: true});
-
+      let todoItem = createTodoItem({name: todoItemForm.input.value, done: false});
+      session[whosTodo].push({name: todoItemForm.input.value, done: false});
       
       todoItem.doneButton.addEventListener('click', function() {
         todoItem.item.classList.toggle('list-group-item-success');
@@ -111,16 +137,10 @@
       });
       
       todoList.append(todoItem.item);
-
       todoItemForm.input.value = '';
+      localStorage.setItem('session', JSON.stringify(session));
     });
   }
-
-  // document.addEventListener('DOMContentLoaded', function() {
-  //   createTodoApp(document.getElementById('my-todos'), 'Мои дела');
-  //   createTodoApp(document.getElementById('mom-todos'), 'Дела для мамы');
-  //   createTodoApp(document.getElementById('dad-todos'), 'Дела для папы');
-  // });
   
   window.createTodoApp = createTodoApp;
 })();
