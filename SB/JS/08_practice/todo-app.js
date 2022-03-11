@@ -77,7 +77,6 @@
       momTodos: [],
       dadTodos: [],
     };
-    
 
     container.append(todoAppTitle);
     container.append(todoItemForm.form);
@@ -100,9 +99,7 @@
         });
         todoList.append(todoItem.item);
       }
-
     }
-    
 
     //событие на input формы
     todoItemForm.form.addEventListener('input', function() {
@@ -124,12 +121,14 @@
         return;
       }
       // Создаем TodoItem
-      let todoItem = createTodoItem({name: todoItemForm.input.value, done: false});
-      session[whosTodo].push({name: todoItemForm.input.value, done: false});
+      let nameAndStatus = {name: todoItemForm.input.value, done: false};
+      let todoItem = createTodoItem(nameAndStatus);
+      session[whosTodo].push(nameAndStatus);
       
       todoItem.doneButton.addEventListener('click', function() {
         todoItem.item.classList.toggle('list-group-item-success');
       });
+
       todoItem.deleteButton.addEventListener('click', function() {
         if (confirm('Вы уверены?')) {
           todoItem.item.remove();
