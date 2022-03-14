@@ -65,7 +65,7 @@
       doneButton,
       deleteButton,
     };
-    
+
   }
 
   function createTodoApp(container, title = 'Список дел', whosTodo, ...args) {
@@ -81,28 +81,33 @@
     container.append(todoAppTitle);
     container.append(todoItemForm.form);
     container.append(todoList);
-    
+
     // Загрузка сохраненных дел
     if (args.length !== 0) {
       console.log(args);
       session = args[0];
       for (i = 0; i < args[0][whosTodo].length; i++) {
         let todoItem = createTodoItem(args[0][whosTodo][i]);
-
+        console.log(args[0][whosTodo][i]);
         todoItem.doneButton.addEventListener('click', function () {
           todoItem.item.classList.toggle('list-group-item-success');
         });
         todoItem.deleteButton.addEventListener('click', function () {
           if (confirm('Вы уверены?')) {
             todoItem.item.remove();
+            let indexOfRemovedItem = session[whosTodo].indexOf(args[0][whosTodo][i]);
+            console.log(indexOfRemovedItem);
+            session[whosTodo].splice(indexOfRemovedItem, 1);
+            localStorage.setItem('session', JSON.stringify(session));
           }
         });
         todoList.append(todoItem.item);
+        //localStorage.setItem('session', JSON.stringify(session));
       }
     }
 
     //событие на input формы
-    todoItemForm.form.addEventListener('input', function() {
+    todoItemForm.form.addEventListener('input', function () {
       // Если не пусто, удаляем атрибут disabled, если пусто, возвращаем
       if (todoItemForm.input.value) {
         todoItemForm.button.removeAttribute('disabled');
@@ -112,7 +117,7 @@
       }
     })
 
-    todoItemForm.form.addEventListener('submit', function(e) {
+    todoItemForm.form.addEventListener('submit', function (e) {
       e.preventDefault();
       // возвращаем атрибут disabled кнопке после добавления дела
       todoItemForm.button.setAttribute('disabled', 'true');
@@ -121,25 +126,29 @@
         return;
       }
       // Создаем TodoItem
-      let nameAndStatus = {name: todoItemForm.input.value, done: false};
+      let nameAndStatus = { name: todoItemForm.input.value, done: false };
       let todoItem = createTodoItem(nameAndStatus);
       session[whosTodo].push(nameAndStatus);
-      
-      todoItem.doneButton.addEventListener('click', function() {
+
+      todoItem.doneButton.addEventListener('click', function () {
         todoItem.item.classList.toggle('list-group-item-success');
       });
 
-      todoItem.deleteButton.addEventListener('click', function() {
+      todoItem.deleteButton.addEventListener('click', function () {
         if (confirm('Вы уверены?')) {
           todoItem.item.remove();
+          let indexOfRemovedItem = session[whosTodo].indexOf(nameAndStatus);
+          console.log(indexOfRemovedItem);
+          session[whosTodo].splice(indexOfRemovedItem, 1);
+          localStorage.setItem('session', JSON.stringify(session));
         }
       });
-      
+
       todoList.append(todoItem.item);
       todoItemForm.input.value = '';
       localStorage.setItem('session', JSON.stringify(session));
     });
   }
-  
+
   window.createTodoApp = createTodoApp;
 })();
