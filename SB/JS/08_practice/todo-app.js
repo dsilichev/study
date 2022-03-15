@@ -87,22 +87,28 @@
       console.log(args);
       session = args[0];
       for (i = 0; i < args[0][whosTodo].length; i++) {
-        let todoItem = createTodoItem(args[0][whosTodo][i]);
-        console.log(args[0][whosTodo][i]);
+        let nameAndStatus = args[0][whosTodo][i];
+        let todoItem = createTodoItem(nameAndStatus);
         todoItem.doneButton.addEventListener('click', function () {
           todoItem.item.classList.toggle('list-group-item-success');
+          let indexOfModifiedItem = session[whosTodo].indexOf(nameAndStatus);
+          if (todoItem.item.classList.contains('list-group-item-success')) {
+            session[whosTodo][indexOfModifiedItem].done = true;
+          }
+          else {
+            session[whosTodo][indexOfModifiedItem].done = false;
+          }
+          localStorage.setItem('session', JSON.stringify(session));
         });
         todoItem.deleteButton.addEventListener('click', function () {
           if (confirm('Вы уверены?')) {
             todoItem.item.remove();
-            let indexOfRemovedItem = session[whosTodo].indexOf(args[0][whosTodo][i]);
-            console.log(indexOfRemovedItem);
+            let indexOfRemovedItem = session[whosTodo].indexOf(nameAndStatus);
             session[whosTodo].splice(indexOfRemovedItem, 1);
             localStorage.setItem('session', JSON.stringify(session));
           }
         });
         todoList.append(todoItem.item);
-        //localStorage.setItem('session', JSON.stringify(session));
       }
     }
 
@@ -132,6 +138,14 @@
 
       todoItem.doneButton.addEventListener('click', function () {
         todoItem.item.classList.toggle('list-group-item-success');
+        let indexOfModifiedItem = session[whosTodo].indexOf(nameAndStatus);
+        if (todoItem.item.classList.contains('list-group-item-success')) {
+          session[whosTodo][indexOfModifiedItem].done = true;
+        }
+        else {
+          session[whosTodo][indexOfModifiedItem].done = false;
+        }
+        localStorage.setItem('session', JSON.stringify(session));
       });
 
       todoItem.deleteButton.addEventListener('click', function () {
