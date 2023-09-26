@@ -11,28 +11,65 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link href="/style.css" rel="stylesheet" />
     <script defer src="/app.js"></script>
   </head>
   <body>
-    <div>
+    <div class="container">
       <!-- Button trigger modal -->
       <button
-      id="openButton"
+        id="openButton"
         type="button"
-        class="btn btn-primary position-absolute top-50 start-50 translate-middle"
+        class="btn btn-primary mb-3"
         data-bs-toggle="modal"
         data-bs-target="#myModal"
       >
         Launch modal
       </button>
 
+      <!-- Form -->
+      <form>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="Имя"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            placeholder="Фамилия"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="middleName"
+            placeholder="Отчество"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
       <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" aria-modal="true" role="dialog">
+      <div
+        class="modal fade"
+        id="myModal"
+        tabindex="-1"
+        aria-modal="true"
+        role="dialog"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5">Modal title</h1>
               <button
+                id="closeX"
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
@@ -48,7 +85,11 @@
           </div>
         </div>
       </div>
-      <div class="modal-backdrop fade show" id="backdrop"  style="display: none;"></div>
+      <div
+        class="modal-backdrop fade show"
+        id="backdrop"
+        style="display: none"
+      ></div>
     </div>
   </body>
 </html>
