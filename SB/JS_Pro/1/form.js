@@ -52,8 +52,8 @@
   // submit evet
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    // adding paragraph with name
+    if (firstName.value && middleName.value && lastName.value) {
+      // adding paragraph with name
     nameLine = document.createElement("p");
     nameLine.innerText =
       firstName.value + " " + middleName.value + " " + lastName.value;
@@ -62,6 +62,7 @@
     // clear fields
     for (const field of fields) {
       field.value = "";
+    }
     }
   });
 }
