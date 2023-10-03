@@ -2,28 +2,66 @@
   const firstName = document.getElementById("firstName");
   const lastName = document.getElementById("lastName");
   const middleName = document.getElementById("middleName");
+  const form = document.getElementById("form");
+
+  const fields = [firstName, lastName, middleName];
 
   const regex = /[\sа-яА-Я-]/g;
 
-  firstName.addEventListener("input", () => {
-    firstName.value = (firstName.value.match(regex) || []).join("");
-  });
+  // returns string with allowed symbols
+  function allowedSymbols(str) {
+    return (str.match(regex) || []).join("");
+  }
+  // return modified string
+  function modifiedString(str) {
+    // replace multiple to single
+    str = str.replace(/-+/g, "-");
+    str = str.replace(/ +/g, " ");
 
-  firstName.addEventListener("focusout", () => {
-    console.log(";sfrg");
-    // пробелы также как - удалить
-    firstName.value = firstName.value.replace(/-+/g, '-');
-    firstName.value = firstName.value.replace(/ +/g, ' ');
-    for (i=0; i<=1; i++) {
-      if (firstName.value.indexOf("-") === 0 || firstName.value.indexOf(" ") === 0) {
-        firstName.value = firstName.value.slice(1);
-        console.log(firstName.value)
-      }
+    // deleting at start
+    while (str.indexOf("-") === 0 || str.indexOf(" ") === 0) {
+      str = str.slice(1);
     }
-    for (i=0; i<=1; i++) {
-      if (firstName.value.indexOf("-") === firstName.value.length || firstName.value.indexOf(" ") === firstName.value.length) {
-        firstName.value = firstName.value.substring(0, firstName.value.length - 1); // need to fix
-      }
+
+    // deleting at end
+    while (
+      str.lastIndexOf("-") === str.length - 1 ||
+      str.lastIndexOf(" ") === str.length - 1
+    ) {
+      str = str.substring(0, str.length - 1);
+    }
+
+    // first sign to UpperCase
+    if (str) {
+      str = str[0].toUpperCase() + str.slice(1);
+    }
+    return str;
+  }
+
+  // input events
+  for (const field of fields) {
+    field.addEventListener("input", (e) => {
+      field.value = allowedSymbols(e.currentTarget.value);
+    });
+
+    field.addEventListener("blur", (e) => {
+      field.value = modifiedString(e.currentTarget.value);
+    });
+  }
+
+  // submit evet
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // adding paragraph with name
+    nameLine = document.createElement("p");
+    nameLine.innerText =
+      firstName.value + " " + middleName.value + " " + lastName.value;
+    form.appendChild(nameLine);
+    
+    // clear fields
+    for (const field of fields) {
+      field.value = "";
     }
   });
 }
