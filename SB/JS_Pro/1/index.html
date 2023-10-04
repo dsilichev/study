@@ -11,8 +11,10 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/style.css">
     <script defer src="/modal.js"></script>
     <script defer src="/form.js"></script>
+    <script defer src="/scroll.js"></script>
   </head>
   <body>
     <div class="container">
@@ -56,6 +58,9 @@
         <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
       </form>
 
+      <div style="margin-top: 20px; background: blue; height: 200vh; width: 50vw"></div>
+      <button id="scrollUpButton" class="d-none btn btn-secondary position-fixed bottom-0 end-0 mb-2 me-4">Go UP</button>
+      
       <!-- Modal -->
       <div
         class="modal fade"

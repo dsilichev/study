@@ -8,33 +8,45 @@
 
   const regex = /[\sа-яА-Я-]/g;
 
+  function clearFields(fields) {
+    // clear fields
+    for (const field of fields) {
+      field.value = "";
+    }
+  }
+
+  clearFields(fields);
+
   // returns string with allowed symbols
   function allowedSymbols(str) {
     return (str.match(regex) || []).join("");
   }
   // return modified string
   function modifiedString(str) {
-    // replace multiple to single
-    str = str.replace(/-+/g, "-");
-    str = str.replace(/ +/g, " ");
-
-    // deleting at start
-    while (str.indexOf("-") === 0 || str.indexOf(" ") === 0) {
-      str = str.slice(1);
-    }
-
-    // deleting at end
-    while (
-      str.lastIndexOf("-") === str.length - 1 ||
-      str.lastIndexOf(" ") === str.length - 1
-    ) {
-      str = str.substring(0, str.length - 1);
-    }
-
-    // first sign to UpperCase
     if (str) {
-      str = str[0].toUpperCase() + str.slice(1);
+      // replace multiple to single
+      str = str.replace(/-+/g, "-");
+      str = str.replace(/ +/g, " ");
+
+      // deleting at start
+      while (str.indexOf("-") === 0 || str.indexOf(" ") === 0) {
+        str = str.slice(1);
+      }
+
+      // deleting at end
+      while (
+        str.lastIndexOf("-") === str.length - 1 ||
+        str.lastIndexOf(" ") === str.length - 1
+      ) {
+        str = str.substring(0, str.length - 1);
+      }
+
+      // first sign to UpperCase
+      if (str) {
+        str = str[0].toUpperCase() + str.slice(1);
+      }
     }
+
     return str;
   }
 
@@ -54,15 +66,12 @@
     e.preventDefault();
     if (firstName.value && middleName.value && lastName.value) {
       // adding paragraph with name
-    nameLine = document.createElement("p");
-    nameLine.innerText =
-      firstName.value + " " + middleName.value + " " + lastName.value;
-    form.appendChild(nameLine);
-    
-    // clear fields
-    for (const field of fields) {
-      field.value = "";
-    }
+      nameLine = document.createElement("p");
+      nameLine.innerText =
+        firstName.value + " " + middleName.value + " " + lastName.value;
+      form.appendChild(nameLine);
+
+      clearFields(fields);
     }
   });
 }
