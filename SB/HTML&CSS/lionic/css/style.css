@@ -106,3 +106,38 @@ body {
 .hero-btn {
   margin-bottom: 14px;
 }
+
+/* services */
+.services-title {
+  text-align: center;
+}
+
+.services-descr {
+  text-align: center;
+}
+
+.services-item {
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  width: 270px;
+  outline: 1px solid coral;
+}
+
+.services-item:not(:nth-child(4n)) {
+  margin-right: 30px;
+}
+
+.services-item-icon {
+  margin-bottom: 25px;
+}
+
+.services-item-title {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.services-item-descr {
+  margin: 0;
+  text-align: center;
+}
