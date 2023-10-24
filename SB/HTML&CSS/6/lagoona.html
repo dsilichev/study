@@ -5,24 +5,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Document</title>
 </head>
 
 <body>
   <header class="header">
     <div class="container">
-      <a href="#" class="header-logo">
-        <img src="img/logo.svg" class="header-logo" alt="Lagoona-logo">
-      </a>
-      <a href="tel:+74953225448" class="header-contact">
-        +7 495 322 54 48
-      </a>
-      <a href="#" class="header-lk">
-        Личный кабинет
-      </a>
+      <div class="header-links flex header-container">
+        <a href="#" class="header-logo">
+          <img src="img/logo.svg" alt="Lagoona-logo">
+        </a>
+        <a href="tel:+74953225448" class="header-contact">
+          +7 495 322 54 48
+        </a>
+        <a href="#" class="header-lk">
+          Личный кабинет
+        </a>
+      </div>
       <nav class="header-nav">
-        <ul class="header-list">
+        <ul class="header-list list-reset flex">
           <li class="header-list-item">
             <a href="#" class="header-link">
               О&nbsp;нас
@@ -54,17 +57,17 @@
             </a>
           </li>
         </ul>
-        <button class="btn">
-          Хочу тур
-        </button>
-        <button class="btn">
-          Обратный звонок
-        </button>
       </nav>
+      <button class="btn btn-reset header-btn">
+        Хочу тур
+      </button>
+      <button class="btn btn-reset header-btn">
+        Обратный звонок
+      </button>
     </div>
   </header>
 <main class="main">
-  <section class="specials">
+  <section class="specials section-offset">
     <div class="container">
       <h2 class="section-title specials-title">
         Спецпредложения
@@ -115,7 +118,7 @@
       </ul>
     </div>
   </section>
-  <section class="about">
+  <section class="about section-offset">
     <div class="container">
       <h2 class="section-title">
         О&nbsp;нас
@@ -125,7 +128,7 @@
       </p>
     </div>
   </section>
-  <section class="services">
+  <section class="services section-offset">
     <div class="container">
       <h2 class="section-title services-title">
         Услуги
@@ -186,7 +189,7 @@
       </ul>
     </div>
   </section>
-  <section class="adv">
+  <section class="adv section-offset">
     <div class="container">
       <h2 class="section-title adv-title">
         Преимущества
@@ -375,7 +378,7 @@
       </ul>
     </div>
   </section>
-  <section class="accom">
+  <section class="accom section-offset">
     <div class="container">
       <h2 class="section-title accom-title">
         Размещение
