@@ -56,6 +56,12 @@ body {
   padding-top: 70px;
 }
 
+.section-description {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
 /* header */
 .header {
   outline: 1px solid coral;
@@ -91,4 +97,20 @@ body {
 
 .header-btn:not(:last-child) {
   margin-right: 40px;
+}
+
+/* specials */
+.specials-list {
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.specials-list-item {
+  margin: 0;
+  margin-right: 24px;
+}
+
+/* about */
+.section-descr-offset {
+  width: 888px;
 }
