@@ -103,23 +103,38 @@ body {
 /* specials */
 .specials-list {
   display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". ."
+    ". ."; 
   
 }
 .specials-list-item {
-  margin: 0;
+  width: 573px;
+  height: 258px;
   position: relative;
-  grid-column: 2 ;
-  grid-row: 1 / 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .specials-list-item:not(:nth-child(2n)) {
   margin-right: 24px;
-  grid-column: 1;
-  grid-row: 1;
+  margin-bottom: 24px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
 .specials-list-item:last-child {
-  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .special-text-small {
@@ -216,7 +231,13 @@ body {
 
 /* services */
 .services-list {
-  flex-wrap: wrap;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". ."
+    ". ."; 
 }
 
 .services-list-item {
