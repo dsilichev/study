@@ -113,7 +113,7 @@ body {
 }
 .specials-list-item {
   width: 573px;
-  min-height: 258px;
+  height: 258px;
   position: relative;
   grid-column-start: 2;
   grid-column-end: 2;
@@ -295,6 +295,7 @@ body {
   position: relative;
   margin: 0;
   margin-bottom: 24px;
+  max-width: 374px;
   outline: 1px solid coral;
 }
 
